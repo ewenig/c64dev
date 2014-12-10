@@ -1,0 +1,50 @@
+                               About `spriter`
+
+`spriter` is a utility for converting sprites in .GIF format to Commodore 64-
+compatible sprite data. It is invoked thusly:
+
+    ./spriter [-r] [filename]
+
+It will output a 64tass (http://tass64.sourceforge.net) compatible syntax
+describing a data block which may then be loaded into video memory and assigned
+to a sprite pointer.
+
+                                   Flags
+
+The -r flag triggers a reversal of sprite-data values, i.e. 0s become 1s, and
+vice versa.
+
+                          Format of the input file
+
+The input file MUST be an image conforming to the GIF (Graphics Interchange
+Format) specification with a width of 24 pixels and a height of 21. All pixels
+with the background palette color (i.e. a color value of 0) are assigned a 0
+value in the output. All non-background colored pixels are assigned a value of
+1. See the "Flags" section above for information on how to reverse these
+values.
+
+                                  License
+
+Copyright (c) 2014 Eli Wenig
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+The Graphics Interchange Format© is the Copyright property of CompuServe
+Incorporated. GIF℠ is a Service Mark property of CompuServe Incorporated. All
+rights reserved.
