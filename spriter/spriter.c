@@ -68,6 +68,7 @@ int main (int argc, char** argv) {
 	// make sure we have the correct number of pixels
 	if ((SpriteGif->SWidth % wwidth != 0) && SpriteGif->SHeight != 21) {
 		fputs("Error: Incorrect dimensions\n",stderr);
+		exit(1);
 	}
 
 	// iterate over the raster bits
