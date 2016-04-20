@@ -1,0 +1,27 @@
+rot_size:
+	.byte 10
+
+rot_spd:
+	.byte 1
+	.byte 2
+	.byte 3
+	.byte 4
+	.byte 5
+	.byte 255
+	.byte 254
+	.byte 253
+	.byte 252
+	.byte 251
+
+rot_dly:
+	.byte 10
+	.byte 20
+	.byte 30
+	.byte 40
+	.byte 50
+	.byte 10
+	.byte 20
+	.byte 30
+	.byte 40
+	.byte 50
+

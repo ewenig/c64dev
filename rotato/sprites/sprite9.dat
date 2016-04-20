@@ -1,0 +1,86 @@
+	; row 0
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+	; row 1
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+	; row 2
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+	; row 3
+	.byte %00000000
+	.byte %01111100
+	.byte %00000000
+	; row 4
+	.byte %00000000
+	.byte %10000010
+	.byte %00000000
+	; row 5
+	.byte %00000001
+	.byte %00000001
+	.byte %00000000
+	; row 6
+	.byte %00000001
+	.byte %00000001
+	.byte %00000000
+	; row 7
+	.byte %00000001
+	.byte %00000001
+	.byte %00000000
+	; row 8
+	.byte %00000001
+	.byte %00000001
+	.byte %00000000
+	; row 9
+	.byte %00000001
+	.byte %00000001
+	.byte %00000000
+	; row a
+	.byte %00000000
+	.byte %10000011
+	.byte %00000000
+	; row b
+	.byte %00000000
+	.byte %01111101
+	.byte %00000000
+	; row c
+	.byte %00000000
+	.byte %00000001
+	.byte %00000000
+	; row d
+	.byte %00000000
+	.byte %00000010
+	.byte %00000000
+	; row e
+	.byte %00000000
+	.byte %00000010
+	.byte %00000000
+	; row f
+	.byte %00000000
+	.byte %00000110
+	.byte %00000000
+	; row 10
+	.byte %00000000
+	.byte %00000100
+	.byte %00000000
+	; row 11
+	.byte %00000000
+	.byte %00001000
+	.byte %00000000
+	; row 12
+	.byte %00000000
+	.byte %00110000
+	.byte %00000000
+	; row 13
+	.byte %00000001
+	.byte %11100000
+	.byte %00000000
+	; row 14
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+; padding byte
+	.byte $00
