@@ -86,6 +86,7 @@ startframe:
 	; move all sprites
 	ldx cindex ; cardioid index
 	lda xbuf,x
+	clc
 	sta $d000
 	sta $d006
 	sta $d00c
@@ -130,14 +131,14 @@ rotate_forward:
 	iny
 	cpy #$2e
 	bne store_ptrs
-	ldy #$20 ; wrap around (here is where you can increase the # of allowed sprites)
+	ldy #$20 ; wrap around (you can increase the # of allowed sprites here)
 	jmp store_ptrs
 rotate_backward:
 	ldy $07f8
 	dey
 	cpy #$1f
 	bne store_ptrs
-	ldy #$2e ; wrap around, the other way
+	ldy #$2d ; wrap around, the other way
 store_ptrs:
 	tya
 	ldx #$f8
@@ -147,9 +148,9 @@ ptrlp2:
 	bmi ptrlp2
 	; load next rotation counter
 	ldx rindex
+find_rotctr:
 	; find the absolute value of the speed from the table
 	; from https://atariage.com/forums/topic/71120-6502-killer-hacks/page-4
-find_rotctr:
 	lda rot_spd,x
 	bpl set_rotctr
 	eor #$ff
@@ -169,10 +170,11 @@ tick_ctrs:
 
 advance_table: ; if we hit 0 on the table delay counter, advance the table index
 	ldx rindex
-	cpx rot_size
+	inx
+	lda rot_spd,x
+	cmp #$80 ; -128 means restart the animation
 	beq reset_rindex
-	inx 
-	.byte $2c ; hack to skip the next instruction
+	jmp set_rindex
 reset_rindex:
 	; if we're at the end of the table, restart
 	ldx #$00

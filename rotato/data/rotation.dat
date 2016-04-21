@@ -1,5 +1,13 @@
-rot_size:
-	.byte 10
+; rotation table
+
+; rot_spd controls the speed of the rotation. A value of 1 means increment the
+; sprite pointer every 1 frame, 2 for 2 frames, 3 for 3 frames, and so on.
+; These values are signed; negative numbers indicate that the animation should
+; play in reverse. A value of -128 ($80) means restart the animation from the
+; beginning of the table.
+
+; rot_dly indicates the delay (in frames) that the animation routine should
+; wait before advancing the table pointer and loading a new speed.
 
 rot_spd:
 	.byte 1
@@ -12,6 +20,7 @@ rot_spd:
 	.byte 253
 	.byte 252
 	.byte 251
+	.byte $80
 
 rot_dly:
 	.byte 10
