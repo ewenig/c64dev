@@ -15,14 +15,67 @@
 	lda #$00  ; colors
 	sta $d021 ; background color
 	sta $d01c ; all sprites high-res
-	sta rindex ; initialzers
+	sta rindex ; initialize the rotation table index
+	sta cindex ; initialize the cardioid table index
 
 	lda #$ff
 	sta $d017 ; scale x
 	sta $d01d ; scale y
 	sta $d015 ; enable sprites
 
-	; pointers
+	; bank switch screen memory to $0000
+	lda $dd00
+	ora #%00000011
+	sta $dd00
+
+	lda #%00011110; character memory at $3800
+	sta $d018
+	lda $d016
+	ora #%00010000 ; multicolor mode
+	sta $d016
+
+	; populate character graphics memory
+	ldx #$00
+chrlp:
+	txa
+	sta $0400,x
+	sta $04f0,x
+	sta $05e0,x
+	sta $06d0,x
+	inx
+	cpx #$f0
+	bne chrlp
+	ldx #$00
+chrlp2:
+	txa
+	sta $07c0,x
+	inx
+	cpx #$30
+	bne chrlp2
+
+	; set colors
+	ldx #$07
+	stx $d021
+	inx
+	stx $d022
+	ldx #$02
+	stx $d023
+	lda #$0d
+	ldx #$00
+	sta $d020
+chrlp3:
+	sta $d800,x
+	sta $d900,x
+	sta $da00,x
+	inx
+	bne chrlp3
+chrlp4:
+	sta $db00,x
+	inx
+	cpx #$e8
+	bne chrlp4
+
+; pointers
 	lda #$20 ; initial ptr
 	ldx #$f8 
 ptrlp:
@@ -30,8 +83,8 @@ ptrlp:
 	inx
 	bmi ptrlp ; will overflow when x rolls over to $00
 
-	lda #$14
-	sta $d018 ; set screen/character memory offsets 
+	;lda #$14
+	;sta $d018 ; set screen/character memory offsets 
 
 	; shit from  http://codebase64.org/doku.php?id=base:double_irq_explained
     lda #$01
@@ -218,3 +271,6 @@ loadnxt:
 	* = $2000
 	.include "data/cardioid.dat"
 	.include "data/rotation.dat"
+
+	* = $3800
+	.include "sprites/background.dat"
