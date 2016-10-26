@@ -1,6 +1,5 @@
-CXX=clang
-FLAGS=-Wall
-LIBFLAGS=-lgif
+CFLAGS=-Wall
+LDFLAGS=-lgif
 
 spriter: spriter.c
-	$(CXX) $(FLAGS) $(LIBFLAGS) spriter.c -o spriter
+	$(CC) $(CFLAGS) spriter.c -o spriter $(LDFLAGS)
