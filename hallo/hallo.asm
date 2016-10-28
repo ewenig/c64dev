@@ -1,12 +1,12 @@
-	.include "macros.inc"
+    .include "macros.inc"
 
     ; constants
-	green_line = #$dc
+    green_line = #$dc
     ghost_spr_offset = #$27
     text_spr_offset = #$18
     text_pos_x = #$15
     text_pos_y = #$28
-	opnscrirq  = #$fa
+    opnscrirq  = #$fa
 
     ghost_pos_x = #$5a ; initial x position
     ghost_pos_y = $8a ; initial y position
@@ -14,82 +14,82 @@
     ghost_flicker = ghost_enable+3
 
     ; pointers
-	color = $4000
+    color = $4000
     ghost_ctr = $9a
     sine_offset = $9b
     ghost_state = $9c
 
-	*=$5000
+    *=$5000
 
-	#disint
+    #disint
 
-	lda #$00  ; colors
-	sta $d021 ; background color
-	sta $d020 ; border color
+    lda #$00  ; colors
+    sta $d021 ; background color
+    sta $d020 ; border color
 
     lda ghost_flicker
     sta ghost_ctr ; turn the ghost off
 
-	; bank switch screen memory to $0000
-	lda $dd00
-	ora #%00000011
-	sta $dd00
+    ; bank switch screen memory to $0000
+    lda $dd00
+    ora #%00000011
+    sta $dd00
 
     ; bitmap memory at $3800
-	; screen memory at $0c00
-	lda #%00111000
-	sta $d018
-	lda $d016
-	ora #%00010000 ; multicolor mode
-	sta $d016
+    ; screen memory at $0c00
+    lda #%00111000
+    sta $d018
+    lda $d016
+    ora #%00010000 ; multicolor mode
+    sta $d016
 
-	; set d011 for bitmap mode
-	lda $d011
-	and #%10111111
-	ora #%00100000
-	sta $d011
-	
-	; set colors
-	ldx #$0f
-	stx $d021
+    ; set d011 for bitmap mode
+    lda $d011
+    and #%10111111
+    ora #%00100000
+    sta $d011
+    
+    ; set colors
+    ldx #$0f
+    stx $d021
 
     ; sprite options
     ldx #$ff
-	stx $d01d ; width scaling
-	stx $d017 ; height scaling
+    stx $d01d ; width scaling
+    stx $d017 ; height scaling
 
-	; load color table into color memory
-	ldx #$00
+    ; load color table into color memory
+    ldx #$00
 col_loop:
-	lda color,x
-	sta $d800,x
-	lda color+$100,x
-	sta $d900,x
-	lda color+$200,x
-	sta $da00,x
-	lda color+$300,x
-	sta $db00,x
-	inx
-	bne col_loop
+    lda color,x
+    sta $d800,x
+    lda color+$100,x
+    sta $d900,x
+    lda color+$200,x
+    sta $da00,x
+    lda color+$300,x
+    sta $db00,x
+    inx
+    bne col_loop
 
     lda #$01
     sta $d01a ; enable raster interrupt
-	lda $d011
-	and #%01111111
-	sta $d011 ; clear high bit of IRQ
+    lda $d011
+    and #%01111111
+    sta $d011 ; clear high bit of IRQ
 
-	; set up raster interrupt
-	ldy #<textline1
-	ldx #>textline1
-	lda #$00
-	sty $0314
-	stx $0315
-	sta $d012
+    ; set up raster interrupt
+    ldy #<textline1
+    ldx #>textline1
+    lda #$00
+    sty $0314
+    stx $0315
+    sta $d012
 
-	#enint
+    #enint
 
 ;;; MAIN LOOP ;;;
-	jmp *
+    jmp *
 ;;; MAIN LOOP ;;;
 
 ; interrupt routines
@@ -97,7 +97,7 @@ textline1:
     ; open border
     lda $d011
     ora #%00001000
-	sta $d011 ; set bit 3 of $d011
+    sta $d011 ; set bit 3 of $d011
 
     lda #$00 ; black
     sta $d021
@@ -110,11 +110,11 @@ textline1:
     lda #%01100000
     sta $d010
 
-	lda #$00
-	sta $d020
+    lda #$00
+    sta $d020
 
     ; set first line of text sprites
-	ldx #$00
+    ldx #$00
     stx $d01c ; no sprite multicolor
     
     ; set sprite colors
@@ -168,33 +168,33 @@ textline1:
     sta $d00b
     sta $d00d
 
-	; load next interrupt
+    ; load next interrupt
     lda #$35
-	sta $d012
-	ldx #<resetbg
-	stx $0314
-	ldy #>resetbg
-	sty $0315
+    sta $d012
+    ldx #<resetbg
+    stx $0314
+    ldy #>resetbg
+    sty $0315
 
-	; return from interrupt
-	asl $d019
-	#ret
+    ; return from interrupt
+    asl $d019
+    #ret
 
 resetbg:
     lda #$0f ; lightgrey
     sta $d021
 
-	; load next interrupt
+    ; load next interrupt
     lda text_pos_y+39
-	sta $d012
-	ldx #<textline2
-	stx $0314
-	ldy #>textline2
-	sty $0315
+    sta $d012
+    ldx #<textline2
+    stx $0314
+    ldy #>textline2
+    sty $0315
 
-	; return from interrupt
-	asl $d019
-	#ret
+    ; return from interrupt
+    asl $d019
+    #ret
 
 textline2:
     #stall 38
@@ -226,24 +226,24 @@ textline2:
     inx
     stx $0ffe
 
-	; load next interrupt
+    ; load next interrupt
     lda text_pos_y+42+42
-	sta $d012
-	ldx #<set_ghost
-	stx $0314
-	ldy #>set_ghost
-	sty $0315
+    sta $d012
+    ldx #<set_ghost
+    stx $0314
+    ldy #>set_ghost
+    sty $0315
 
-	; return from interrupt
-	asl $d019
-	#ret
+    ; return from interrupt
+    asl $d019
+    #ret
 
 set_ghost:
     ldx #$00
-	stx $d015 ; disable all sprites
-	
+    stx $d015 ; disable all sprites
+    
     ; set up sprite scaling & enable them
-	ldx #$ff
+    ldx #$ff
     stx $d01c ; sprite multicolor
 
     ; set sprite colors
@@ -306,7 +306,7 @@ set_ghost:
     iny
     sty sine_offset
 
-	; load next interrupt
+    ; load next interrupt
     ; a contains the sine table offset
     sbc #83
     sta $d012
@@ -315,9 +315,9 @@ set_ghost:
     ldy #>en_ghost
     sty $0315
     
-	; return from interrupt
-	asl $d019
-	#ret
+    ; return from interrupt
+    asl $d019
+    #ret
 
 en_ghost:
     ; restore sprite state
@@ -332,7 +332,7 @@ en_ghost:
     stx ghost_ctr
     bne ghost_next
     ldx #$00
-	stx $d015 ; disable all sprites
+    stx $d015 ; disable all sprites
     ldx ghost_flicker
     stx ghost_ctr
 
@@ -342,71 +342,71 @@ ghost_next:
 
 ghost_on:
     ldx #$ff
-	stx $d015 ; enable all sprites
+    stx $d015 ; enable all sprites
 
     ldx #$ff
     stx $d015
 
 nextint2:
-	ldx #<set_green
-	stx $0314
-	ldy #>set_green
-	sty $0315
-	lda green_line
-	sta $d012
+    ldx #<set_green
+    stx $0314
+    ldy #>set_green
+    sty $0315
+    lda green_line
+    sta $d012
 
-	; return from interrupt
-	asl $d019
-	#ret
+    ; return from interrupt
+    asl $d019
+    #ret
 
 set_green:
-	lda #$05
-	sta $d020
+    lda #$05
+    sta $d020
 
-	; load next interrupt
-	ldx #<opnscr
-	stx $0314
-	ldy #>opnscr
-	sty $0315
-	lda opnscrirq
-	sta $d012
+    ; load next interrupt
+    ldx #<opnscr
+    stx $0314
+    ldy #>opnscr
+    sty $0315
+    lda opnscrirq
+    sta $d012
 
-	; return from interrupt
-	asl $d019
-	#ret
+    ; return from interrupt
+    asl $d019
+    #ret
 
 ; open the top & bottom screen borders
-opnscr:	#stall 2
-	lda $d011
+opnscr:    #stall 2
+    lda $d011
     and #%11110111
-	sta $d011 ; clear bit 3 + set bit 0 of $d011
+    sta $d011 ; clear bit 3 + set bit 0 of $d011
 
     lda #$05 ; green
     sta $d021
 
-	; load next interrupt
-	ldx #<textline1
-	stx $0314
-	ldy #>textline1
-	sty $0315
-	lda #$05
-	sta $d012
+    ; load next interrupt
+    ldx #<textline1
+    stx $0314
+    ldy #>textline1
+    sty $0315
+    lda #$05
+    sta $d012
 
-	; return from interrupt
-	asl $d019
-	#ret
+    ; return from interrupt
+    asl $d019
+    #ret
 
 sinetab:
-	.byte ghost_pos_y + 6 * sin(range(256) * rad(360.0/128))
+    .byte ghost_pos_y + 6 * sin(range(256) * rad(360.0/128))
 
-	*=$0c00
-	.binary "data/bg.scr"
+    *=$0c00
+    .binary "data/bg.scr"
 
-	*=$2000
-	.binary "data/bg.map"
+    *=$2000
+    .binary "data/bg.map"
 
-	*=color
-	.binary "data/bg.col"
+    *=color
+    .binary "data/bg.col"
 
     *=$09C0
     .include "data/ghostie.spr"
