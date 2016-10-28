@@ -1,0 +1,991 @@
+
+; sprite 0
+
+
+	; row 0
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 1
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 2
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 3
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 4
+	.byte %00000000
+	.byte %00000000
+	.byte %00000001
+
+	; row 5
+	.byte %00000000
+	.byte %00000000
+	.byte %00000001
+
+	; row 6
+	.byte %00000000
+	.byte %00000000
+	.byte %00000101
+
+	; row 7
+	.byte %00000000
+	.byte %00000000
+	.byte %00000101
+
+	; row 8
+	.byte %00000000
+	.byte %00000000
+	.byte %00010101
+
+	; row 9
+	.byte %00000000
+	.byte %00000000
+	.byte %00010101
+
+	; row a
+	.byte %00000000
+	.byte %00000000
+	.byte %00010100
+
+	; row b
+	.byte %00000000
+	.byte %00000000
+	.byte %00010100
+
+	; row c
+	.byte %00000000
+	.byte %00000000
+	.byte %00010100
+
+	; row d
+	.byte %00000000
+	.byte %00000000
+	.byte %01010100
+
+	; row e
+	.byte %00000000
+	.byte %00000000
+	.byte %01010101
+
+	; row f
+	.byte %00000000
+	.byte %00000000
+	.byte %01010101
+
+	; row 10
+	.byte %00000000
+	.byte %00000000
+	.byte %01010101
+
+	; row 11
+	.byte %00000000
+	.byte %00000000
+	.byte %01010101
+
+	; row 12
+	.byte %00000000
+	.byte %00000000
+	.byte %01010101
+
+	; row 13
+	.byte %00000101
+	.byte %01010000
+	.byte %01010101
+
+	; row 14
+	.byte %00010101
+	.byte %01010101
+	.byte %01010101
+	; padding byte
+	.byte $00
+
+; sprite 1
+
+
+	; row 0
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 1
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 2
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 3
+	.byte %00010101
+	.byte %01010100
+	.byte %00000000
+
+	; row 4
+	.byte %01010101
+	.byte %01010101
+	.byte %00000000
+
+	; row 5
+	.byte %01010101
+	.byte %01010101
+	.byte %01000000
+
+	; row 6
+	.byte %01010101
+	.byte %01010101
+	.byte %01010000
+
+	; row 7
+	.byte %01010101
+	.byte %01010101
+	.byte %01010000
+
+	; row 8
+	.byte %01010101
+	.byte %01010101
+	.byte %01010100
+
+	; row 9
+	.byte %00000101
+	.byte %01010100
+	.byte %01010100
+
+	; row a
+	.byte %01010001
+	.byte %01010001
+	.byte %00010101
+
+	; row b
+	.byte %01100001
+	.byte %01000110
+	.byte %00010101
+
+	; row c
+	.byte %01100001
+	.byte %01000110
+	.byte %10000101
+
+	; row d
+	.byte %01100001
+	.byte %01000110
+	.byte %10000101
+
+	; row e
+	.byte %00000101
+	.byte %01000110
+	.byte %00010101
+
+	; row f
+	.byte %01010101
+	.byte %01010000
+	.byte %01010101
+
+	; row 10
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 11
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 12
+	.byte %01010100
+	.byte %00000101
+	.byte %01010101
+
+	; row 13
+	.byte %01000000
+	.byte %11000101
+	.byte %01010101
+
+	; row 14
+	.byte %01001111
+	.byte %11110001
+	.byte %01010101
+	; padding byte
+	.byte $00
+
+; sprite 2
+
+
+	; row 0
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 1
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 2
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 3
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 4
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 5
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 6
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 7
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 8
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 9
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row a
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row b
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row c
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row d
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row e
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row f
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 10
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 11
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 12
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 13
+	.byte %00010101
+	.byte %01010100
+	.byte %00000000
+
+	; row 14
+	.byte %01010101
+	.byte %01010100
+	.byte %00000000
+	; padding byte
+	.byte $00
+
+; sprite 3
+
+
+	; row 0
+	.byte %00010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 1
+	.byte %01010101
+	.byte %01010101
+	.byte %01010100
+
+	; row 2
+	.byte %01010101
+	.byte %01010101
+	.byte %01010100
+
+	; row 3
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 4
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 5
+	.byte %00010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 6
+	.byte %00000101
+	.byte %01010101
+	.byte %01010101
+
+	; row 7
+	.byte %00000001
+	.byte %01010101
+	.byte %01010101
+
+	; row 8
+	.byte %00000000
+	.byte %01010101
+	.byte %01010101
+
+	; row 9
+	.byte %00000000
+	.byte %00010101
+	.byte %01010101
+
+	; row a
+	.byte %00000000
+	.byte %00000001
+	.byte %01010101
+
+	; row b
+	.byte %00000000
+	.byte %00000000
+	.byte %01010101
+
+	; row c
+	.byte %00000000
+	.byte %00000000
+	.byte %01010101
+
+	; row d
+	.byte %00000000
+	.byte %00000000
+	.byte %01010101
+
+	; row e
+	.byte %00000000
+	.byte %00000000
+	.byte %01010101
+
+	; row f
+	.byte %00000000
+	.byte %00000001
+	.byte %01010101
+
+	; row 10
+	.byte %00000000
+	.byte %00000001
+	.byte %01010101
+
+	; row 11
+	.byte %00000000
+	.byte %00000001
+	.byte %01010101
+
+	; row 12
+	.byte %00000000
+	.byte %00000001
+	.byte %01011001
+
+	; row 13
+	.byte %00000000
+	.byte %00000001
+	.byte %01101001
+
+	; row 14
+	.byte %00000000
+	.byte %00000001
+	.byte %01101001
+	; padding byte
+	.byte $00
+
+; sprite 4
+
+
+	; row 0
+	.byte %00000111
+	.byte %11110000
+	.byte %01010101
+
+	; row 1
+	.byte %00010111
+	.byte %11110100
+	.byte %01010101
+
+	; row 2
+	.byte %01010101
+	.byte %11110100
+	.byte %00010101
+
+	; row 3
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 4
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 5
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 6
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 7
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 8
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 9
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row a
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row b
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row c
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row d
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row e
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row f
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 10
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 11
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 12
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 13
+	.byte %01010101
+	.byte %01010101
+	.byte %01010101
+
+	; row 14
+	.byte %01010101
+	.byte %10010101
+	.byte %10100101
+	; padding byte
+	.byte $00
+
+; sprite 5
+
+
+	; row 0
+	.byte %01010101
+	.byte %01010100
+	.byte %00000000
+
+	; row 1
+	.byte %01010101
+	.byte %01010101
+	.byte %00000000
+
+	; row 2
+	.byte %01010101
+	.byte %01010101
+	.byte %00000000
+
+	; row 3
+	.byte %01010101
+	.byte %01010101
+	.byte %00000000
+
+	; row 4
+	.byte %01010101
+	.byte %01010100
+	.byte %00000000
+
+	; row 5
+	.byte %01010101
+	.byte %01010100
+	.byte %00000000
+
+	; row 6
+	.byte %01010101
+	.byte %01010000
+	.byte %00000000
+
+	; row 7
+	.byte %01010101
+	.byte %01000000
+	.byte %00000000
+
+	; row 8
+	.byte %01010101
+	.byte %00000000
+	.byte %00000000
+
+	; row 9
+	.byte %01010101
+	.byte %00000000
+	.byte %00000000
+
+	; row a
+	.byte %01010100
+	.byte %00000000
+	.byte %00000000
+
+	; row b
+	.byte %01010000
+	.byte %00000000
+	.byte %00000000
+
+	; row c
+	.byte %01000000
+	.byte %00000000
+	.byte %00000000
+
+	; row d
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row e
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row f
+	.byte %01000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 10
+	.byte %01000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 11
+	.byte %01000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 12
+	.byte %01000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 13
+	.byte %01000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 14
+	.byte %01000000
+	.byte %00000000
+	.byte %00000000
+	; padding byte
+	.byte $00
+
+; sprite 6
+
+
+	; row 0
+	.byte %00000000
+	.byte %00000101
+	.byte %01101001
+
+	; row 1
+	.byte %00000000
+	.byte %00000101
+	.byte %01101001
+
+	; row 2
+	.byte %00000000
+	.byte %00000101
+	.byte %01101001
+
+	; row 3
+	.byte %00000000
+	.byte %00000101
+	.byte %01101001
+
+	; row 4
+	.byte %00000000
+	.byte %00000101
+	.byte %01101001
+
+	; row 5
+	.byte %00000000
+	.byte %00000101
+	.byte %01101001
+
+	; row 6
+	.byte %00000000
+	.byte %00000101
+	.byte %10101001
+
+	; row 7
+	.byte %00000000
+	.byte %00010101
+	.byte %10101001
+
+	; row 8
+	.byte %00000000
+	.byte %00010101
+	.byte %10100101
+
+	; row 9
+	.byte %00000000
+	.byte %00010101
+	.byte %10100101
+
+	; row a
+	.byte %00000000
+	.byte %00010101
+	.byte %10100101
+
+	; row b
+	.byte %00000000
+	.byte %00010101
+	.byte %10100101
+
+	; row c
+	.byte %00000000
+	.byte %00010101
+	.byte %10100101
+
+	; row d
+	.byte %00000000
+	.byte %00010110
+	.byte %10100101
+
+	; row e
+	.byte %00000000
+	.byte %00010110
+	.byte %10010101
+
+	; row f
+	.byte %00000000
+	.byte %00010110
+	.byte %10010101
+
+	; row 10
+	.byte %00000000
+	.byte %00010110
+	.byte %10010101
+
+	; row 11
+	.byte %00000000
+	.byte %00010110
+	.byte %10010101
+
+	; row 12
+	.byte %00000000
+	.byte %00000000
+	.byte %00000101
+
+	; row 13
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 14
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+	; padding byte
+	.byte $00
+
+; sprite 7
+
+
+	; row 0
+	.byte %01010101
+	.byte %10010101
+	.byte %10100101
+
+	; row 1
+	.byte %01010101
+	.byte %10010101
+	.byte %10100101
+
+	; row 2
+	.byte %01010101
+	.byte %10010101
+	.byte %10100101
+
+	; row 3
+	.byte %01010101
+	.byte %10010101
+	.byte %10100101
+
+	; row 4
+	.byte %01010101
+	.byte %10010101
+	.byte %10100101
+
+	; row 5
+	.byte %01010110
+	.byte %10010101
+	.byte %10100101
+
+	; row 6
+	.byte %01010110
+	.byte %01010101
+	.byte %10100101
+
+	; row 7
+	.byte %01010110
+	.byte %01010101
+	.byte %10100101
+
+	; row 8
+	.byte %01010110
+	.byte %01010110
+	.byte %10100101
+
+	; row 9
+	.byte %01010110
+	.byte %01010110
+	.byte %10100101
+
+	; row a
+	.byte %01010110
+	.byte %01010110
+	.byte %10010101
+
+	; row b
+	.byte %01010110
+	.byte %01010110
+	.byte %10010101
+
+	; row c
+	.byte %01010110
+	.byte %01010110
+	.byte %10010101
+
+	; row d
+	.byte %01010110
+	.byte %01010110
+	.byte %10010101
+
+	; row e
+	.byte %01010110
+	.byte %01010110
+	.byte %10010101
+
+	; row f
+	.byte %01010110
+	.byte %01011010
+	.byte %10010101
+
+	; row 10
+	.byte %01011010
+	.byte %01011010
+	.byte %10010101
+
+	; row 11
+	.byte %01011001
+	.byte %01011010
+	.byte %00000000
+
+	; row 12
+	.byte %01001000
+	.byte %00001010
+	.byte %00000000
+
+	; row 13
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 14
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+	; padding byte
+	.byte $00
+
+; sprite 8
+
+
+	; row 0
+	.byte %01000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 1
+	.byte %01000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 2
+	.byte %01000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 3
+	.byte %01010000
+	.byte %00000000
+	.byte %00000000
+
+	; row 4
+	.byte %01010000
+	.byte %00000000
+	.byte %00000000
+
+	; row 5
+	.byte %01010000
+	.byte %00000000
+	.byte %00000000
+
+	; row 6
+	.byte %01010000
+	.byte %00000000
+	.byte %00000000
+
+	; row 7
+	.byte %01010000
+	.byte %00000000
+	.byte %00000000
+
+	; row 8
+	.byte %01010000
+	.byte %00000000
+	.byte %00000000
+
+	; row 9
+	.byte %01010000
+	.byte %00000000
+	.byte %00000000
+
+	; row a
+	.byte %01010000
+	.byte %00000000
+	.byte %00000000
+
+	; row b
+	.byte %01010000
+	.byte %00000000
+	.byte %00000000
+
+	; row c
+	.byte %01010000
+	.byte %00000000
+	.byte %00000000
+
+	; row d
+	.byte %01010000
+	.byte %00000000
+	.byte %00000000
+
+	; row e
+	.byte %01000000
+	.byte %00000000
+	.byte %00000000
+
+	; row f
+	.byte %01000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 10
+	.byte %01000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 11
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 12
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 13
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+
+	; row 14
+	.byte %00000000
+	.byte %00000000
+	.byte %00000000
+	; padding byte
+	.byte $00
+
